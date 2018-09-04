@@ -1,0 +1,13 @@
+olx-parser-websit:
+ image: bondartsov/olx-parser-websit:0.0.1
+ container_name: olx-parser-websit
+ ports: 
+  - 8000:8000
+olx-parser-nginx:
+ image: bondartsov/olx-parser-nginx
+ container_name: olx-parser-nginx
+ ports:
+  - 8001:80
+  - 8003:443
+ links:
+  - olx-parser-websit
